@@ -1,0 +1,69 @@
+{% extends 'user/design.html' %}
+{% block userblock %}
+{% load staticfiles %}
+<style>
+    .mydetails{
+    position: absolute;
+    top:50px;
+    left:160px;
+    padding:10px;
+    width:600px;
+    margin-left:250px;
+}
+
+.mydetails table{
+    width:50em;
+    text-align:center;
+
+    border-spacing:1px;
+    background:skyblue;
+}
+
+.mydetails table tr th{
+    color:;
+}
+.mydetails table tr th{
+background:
+padding:10px;
+}
+.mydetails table tr td{
+background:skyblue;
+padding:10px;
+}
+.mydetails table tr:hover td{
+background:r);
+}
+.mydetailsimagage{
+border-color:rgba(199,21,133,0.8);;
+ border-width:1px;
+ height:300px;
+ width:300px;
+ margin-top:50px;
+ margin-left:740px;
+ background: url("{% static 'images12.jpg' %}");
+ background-size: 100%100%;
+
+}
+
+</style>
+<div class="mydetails"><table>
+    <tr>
+        <td style="color:black"><b>First Name</b></td>
+        <td style="color:black">{{obje.firstname}}</td>
+    </tr><tr>
+    <td style="color:black"><b>Last Name</b></td>
+        <td style="color:black">{{obje.lastname}}</td>
+    </tr><tr>
+    <td style="color:black"><b>Userid</b></td>
+        <td style="color:black">{{obje.userid}}</td>
+    </tr><tr>
+    <td style="color:black"><b>Mobile Number</b></td>
+        <td style="color:black">{{obje.mblenum}}</td>
+    </tr><tr>
+    <td style="color:black"><b>Email</b> </td>
+        <td style="color:black">{{obje.email}}</td>
+    </tr>
+</table>
+</div>
+<div class="mydetailsimagage"></div>
+{% endblock %}

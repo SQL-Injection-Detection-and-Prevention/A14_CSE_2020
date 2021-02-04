@@ -1,0 +1,66 @@
+{% extends 'admins/admin_design.html' %}
+{% block adminblock %}
+{% load staticfiles %}
+<style>
+    .userdetails{
+     position: absolute;
+    margin-top:50px;
+    left:290px;
+    padding:5px;
+    height:350px;
+    width:980px;
+    overflow:scroll;
+    float:left;
+    }
+    .userdetails table{
+    width:60em;
+    text-align:center;
+
+    border-spacing:1px;
+    background:;
+}
+
+
+.userdetails table tr th{
+background:rgb(0,139,139);
+padding:5px;
+}
+.userdetails table tr td{
+background:rgba(0,139,139,0.3);
+padding:5px;
+}
+.userdetails table tr:hover td{
+background:rgba();
+}
+.sideimage{
+border-color:rgba(199,21,133,0.8);
+ border-width:1px;
+ height:380px;
+ width:360px;
+ margin-top:50px;
+ margin-left:830px;
+ background-size: 100%100%;
+float:left;
+}
+</style>
+<div class="userdetails">
+<table>
+    <tr>
+        <th >Description</th>
+        <th>Attack Type</th>
+
+    </tr>
+    {% for i in obj %}
+    <tr>
+
+    <td style="color:black">{{i.text}}</td>
+ <td style="color:black">{{i.attack_type}}</td>
+</tr>
+    {% endfor %}
+</table>
+</div>
+<div class="sideimage"></div>
+
+
+
+{%endblock%}

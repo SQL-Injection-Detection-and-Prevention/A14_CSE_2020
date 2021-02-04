@@ -1,0 +1,41 @@
+{% extends 'admins/admin_design.html' %}
+{% block adminblock %}
+{% load staticfiles %}
+
+<style>
+
+
+</style>
+
+<script>
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "SQL Injection Attack Analysis "
+	},
+	data: [{
+	   type: "line",
+		showInLegend: true,
+		indexLabel: "{label} {y}",
+		dataPoints: [
+		{% for o in obj %}
+			{y: {{o.dcount}}, label: "{{o.attack_type}}"},
+		{% endfor %}
+		]
+	}]
+});
+chart.render();
+
+}
+
+</script>
+
+
+<div id="chartContainer" class="graph" style="height: 370px; width: 1020px; margin: 0px auto;margin-left:290px;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+
+{%endblock%}
